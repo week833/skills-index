@@ -18,12 +18,12 @@
 | Skill | 一句話用途 | 分類 | 來源 |
 |---|---|---|---|
 | `finmind-twstock-research` | **用 FinMind 資料研究台股**：選資料集、規劃查詢、檢查資料品質與時間點一致性 | 📈 股票與交易 | [finmind-twstock-research-skill](https://github.com/week833/finmind-twstock-research-skill/tree/main/skills/finmind-twstock-research) |
-| `ai-trader` | **交易訊號平台主 Skill**：發布交易訊號、追蹤交易者 | 📈 股票與交易 | [ai-trader/skills/ai4trade](https://github.com/week833/ai-trader/tree/main/skills/ai4trade) |
-| `ai-trader-copytrade` | **跟單**：追蹤高手並自動複製其部位 | 📈 股票與交易 | [ai-trader/skills/copytrade](https://github.com/week833/ai-trader/tree/main/skills/copytrade) |
-| `ai-trader-tradesync` | **同步自己的部位與交易紀錄**到跟單平台 | 📈 股票與交易 | [ai-trader/skills/tradesync](https://github.com/week833/ai-trader/tree/main/skills/tradesync) |
-| `ai-trader-heartbeat` | **定期輪詢平台通知與任務**（心跳機制） | 📈 股票與交易 | [ai-trader/skills/heartbeat](https://github.com/week833/ai-trader/tree/main/skills/heartbeat) |
-| `market-intel` | **唯讀市場情報**：讀取財經事件快照與分組新聞 | 📈 股票與交易 | [ai-trader/skills/market-intel](https://github.com/week833/ai-trader/tree/main/skills/market-intel) |
-| `polymarket-public-data` | **讀取 Polymarket 公開市場資料**與訂單簿價格 | 📈 股票與交易 | [ai-trader/skills/polymarket](https://github.com/week833/ai-trader/tree/main/skills/polymarket) |
+| `ai-trader` | **交易訊號平台主 Skill**：發布交易訊號、追蹤交易者 | 📈 股票與交易 | [HKUDS/AI-Trader/skills/ai4trade](https://github.com/HKUDS/AI-Trader/tree/main/skills/ai4trade) |
+| `ai-trader-copytrade` | **跟單**：追蹤高手並自動複製其部位 | 📈 股票與交易 | [HKUDS/AI-Trader/skills/copytrade](https://github.com/HKUDS/AI-Trader/tree/main/skills/copytrade) |
+| `ai-trader-tradesync` | **同步自己的部位與交易紀錄**到跟單平台 | 📈 股票與交易 | [HKUDS/AI-Trader/skills/tradesync](https://github.com/HKUDS/AI-Trader/tree/main/skills/tradesync) |
+| `ai-trader-heartbeat` | **定期輪詢平台通知與任務**（心跳機制） | 📈 股票與交易 | [HKUDS/AI-Trader/skills/heartbeat](https://github.com/HKUDS/AI-Trader/tree/main/skills/heartbeat) |
+| `market-intel` | **唯讀市場情報**：讀取財經事件快照與分組新聞 | 📈 股票與交易 | [HKUDS/AI-Trader/skills/market-intel](https://github.com/HKUDS/AI-Trader/tree/main/skills/market-intel) |
+| `polymarket-public-data` | **讀取 Polymarket 公開市場資料**與訂單簿價格 | 📈 股票與交易 | [HKUDS/AI-Trader/skills/polymarket](https://github.com/HKUDS/AI-Trader/tree/main/skills/polymarket) |
 | `ppt-master` | **生成可編輯 PPTX 簡報**，並支援範本填入、重建與美化既有簡報 | 📊 簡報 | [ppt-master/skills/ppt-master](https://github.com/week833/ppt-master/tree/main/skills/ppt-master) |
 
 > ⚠️ 6 個 AI-Trader Skill 搭配第三方平台 [ai4trade.ai](https://ai4trade.ai)（需註冊取得 token）：**只支援美股、加密貨幣與 Polymarket，不支援台股**，交易使用平台的**模擬資金**。
