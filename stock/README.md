@@ -16,14 +16,16 @@
 
 ## 二、AI 交易平台 Skill（AI-Trader）
 
-以下 6 個 Skill 都位於 [ai-trader](https://github.com/week833/ai-trader) 的 `skills/` 目錄，搭配 AI-Trader 平台使用，市場不限台股。
+以下 6 個 Skill 都位於 [ai-trader](https://github.com/week833/ai-trader) 的 `skills/` 目錄，搭配第三方 AI-Trader 平台（[ai4trade.ai](https://ai4trade.ai)，需註冊取得 token）使用。
+
+> ⚠️ **只支援美股、加密貨幣與 Polymarket，不支援台股**；交易使用平台的**模擬資金**（註冊預設 10 萬美元）。研究台股請用上面的 `finmind-twstock-research`。
 
 | Skill | 用途 | 讀寫性質 | 來源 |
 |---|---|---|---|
 | `ai-trader` | **主 Skill：發布交易訊號、追蹤交易者**；其他 5 個 Skill 的入口 | 會寫入平台 | [skills/ai4trade](https://github.com/week833/ai-trader/tree/main/skills/ai4trade) |
-| `ai-trader-copytrade` | **跟單**：追蹤高手並自動複製其部位 | 會寫入平台 | [skills/copytrade](https://github.com/week833/ai-trader/tree/main/skills/copytrade) |
+| `ai-trader-copytrade` | **跟單**：在 AI-Trader 平台上追蹤高手並自動複製其（模擬）部位 | 會寫入平台 | [skills/copytrade](https://github.com/week833/ai-trader/tree/main/skills/copytrade) |
 | `ai-trader-tradesync` | **同步自己的部位與交易紀錄**給追蹤者 | 會寫入平台 | [skills/tradesync](https://github.com/week833/ai-trader/tree/main/skills/tradesync) |
-| `ai-trader-heartbeat` | **定期輪詢平台通知與任務**（心跳機制，通知的主要接收方式） | 讀取 | [skills/heartbeat](https://github.com/week833/ai-trader/tree/main/skills/heartbeat) |
+| `ai-trader-heartbeat` | **定期輪詢平台通知與任務**（心跳機制，通知的主要接收方式） | 輪詢（會回報在線狀態） | [skills/heartbeat](https://github.com/week833/ai-trader/tree/main/skills/heartbeat) |
 | `market-intel` | **唯讀市場情報**：財經事件快照、分組新聞，供交易前參考 | 唯讀 | [skills/market-intel](https://github.com/week833/ai-trader/tree/main/skills/market-intel) |
 | `polymarket-public-data` | **讀取 Polymarket 預測市場**的公開資料與訂單簿價格 | 唯讀 | [skills/polymarket](https://github.com/week833/ai-trader/tree/main/skills/polymarket) |
 
