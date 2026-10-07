@@ -35,9 +35,9 @@
 | [stock](https://github.com/week833/stock) | **股票研究環境**的安裝、設定、修復與外部來源索引 | 工具／安裝包 | 📈 股票與交易 |
 | [finmind-twstock-research-skill](https://github.com/week833/finmind-twstock-research-skill) | **FinMind 台股研究 Skill** | Skill | 📈 股票與交易 |
 | [ai-trader](https://github.com/week833/ai-trader) | **AI 代理交易平台**（內含 6 個交易 Skill；美股／加密貨幣／Polymarket 模擬交易） | Fork（上游 [HKUDS/AI-Trader](https://github.com/HKUDS/AI-Trader)） | 📈 股票與交易 |
-| [stock-mitake-ui-reference](https://github.com/week833/stock-mitake-ui-reference) | **三竹股市介面**導航與操作安全參考 | 參考文件 | 📈 股票與交易 |
+| [stock-mitake-ui-reference](https://github.com/week833/stock-mitake-ui-reference) | **三竹股市介面**導航與操作安全參考（公開包 `2.1.0`） | 參考文件 | 📈 股票與交易 |
 | [ppt-master](https://github.com/week833/ppt-master) | **AI 簡報生成** Skill 工具包 | Fork（上游 [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master)） | 📊 簡報 |
 | [windows-local-action-recorder](https://github.com/week833/windows-local-action-recorder) | **Windows 本機操作錄製與受控重播** | 工具 | 🖥️ 自動化 |
 | [skills-index](https://github.com/week833/skills-index) | **全部 Skill 與儲存庫的功能分類索引**（本儲存庫，原 `week833/week833`） | 文件 | 🗂️ 索引 |
 
-查核日期：2026-10-04。
+本機配置同步日期：2026-10-07（本次核對的配置與索引）。
