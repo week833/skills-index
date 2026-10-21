@@ -30,7 +30,7 @@
 
 > ⚠️ `finmind-twstock-research` 是 week833 自行整理的**非官方** Skill，與 FinMind 沒有隸屬或背書關係；要連 FinMind API 必須先經使用者明確同意並安全提供 token；**只供研究，不下單**。
 
-> `ppt-master` 的來源是本帳號的 Fork，沒有自有修改、停在上游 `5.1.0`；最新版在上游 [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master)（2026-10-21 為 `6.7.2`），見 [presentation/README.md](presentation/README.md)。
+> `ppt-master` 的來源是本帳號的 Fork，沒有自有修改；2026-10-21 已同步到上游 [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) 最新版 `6.7.2`，見 [presentation/README.md](presentation/README.md)。
 
 ## 全部儲存庫歸類
 
@@ -40,7 +40,7 @@
 | [finmind-twstock-research-skill](https://github.com/week833/finmind-twstock-research-skill) | **FinMind 台股研究 Skill**（非 FinMind 官方） | Skill | 📈 股票與交易 |
 | [ai-trader](https://github.com/week833/ai-trader) | **AI 代理交易平台**（內含 6 個交易 Skill；美股／加密貨幣／Polymarket 模擬交易；與上游相同、未修改） | Fork（上游 [HKUDS/AI-Trader](https://github.com/HKUDS/AI-Trader)） | 📈 股票與交易 |
 | [stock-mitake-ui-reference](https://github.com/week833/stock-mitake-ui-reference) | **三竹股市介面**導航與操作安全參考（公開包 `2.1.0`，82 項） | 參考文件 | 📈 股票與交易 |
-| [ppt-master](https://github.com/week833/ppt-master) | **AI 簡報生成** Skill 工具包（停在上游 `5.1.0`，沒有自有修改） | Fork（上游 [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master)） | 📊 簡報製作 |
+| [ppt-master](https://github.com/week833/ppt-master) | **AI 簡報生成** Skill 工具包（2026-10-21 已同步到上游 `6.7.2`，沒有自有修改） | Fork（上游 [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master)） | 📊 簡報製作 |
 | [windows-local-action-recorder](https://github.com/week833/windows-local-action-recorder) | **Windows 本機操作錄製與受控重播** | 工具（非 Skill） | 🖥️ Windows 桌面自動化 |
 | [skills-index](https://github.com/week833/skills-index) | **全部 Skill 與儲存庫的功能分類索引**（本儲存庫，原 `week833/week833`） | 文件 | 🗂️ 索引 |
 
