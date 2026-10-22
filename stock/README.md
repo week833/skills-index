@@ -19,7 +19,7 @@
 
 ## 二、AI 交易平台 Skill（AI-Trader）
 
-以下 6 個 Skill 都位於上游 [HKUDS/AI-Trader](https://github.com/HKUDS/AI-Trader) 的 `skills/` 目錄（本帳號的 [ai-trader](https://github.com/week833/ai-trader) 只是未修改的副本），搭配第三方 AI-Trader 平台（[ai4trade.ai](https://ai4trade.ai)）使用；其中 4 個需註冊取得 token（見下表「讀寫性質」）。
+以下 6 個 Skill 都位於上游 [HKUDS/AI-Trader](https://github.com/HKUDS/AI-Trader) 的 `skills/` 目錄（本帳號不另存副本），搭配第三方 AI-Trader 平台（[ai4trade.ai](https://ai4trade.ai)）使用；其中 4 個需註冊取得 token（見下表「讀寫性質」）。
 
 > ⚠️ **只支援美股、加密貨幣與 Polymarket，不支援台股**；交易使用平台的**模擬資金**（註冊預設 10 萬美元）。研究台股請用上面的 `finmind-twstock-research`。
 
@@ -38,7 +38,6 @@
 |---|---|---|
 | [stock](https://github.com/week833/stock) | **一鍵安裝／修復 Windows 股票研究環境**（`D:\stock\GitHub`），整理 39 個可選外部研究來源（37 primary＋2 legacy），預設下載 3 個 core；本身不含股票分析或預測程式 | 工具／安裝包 |
 | [stock-mitake-ui-reference](https://github.com/week833/stock-mitake-ui-reference) | **三竹股市介面導航與操作安全規範**（公開包 `2.1.0`，82 項功能語意投影，不宣稱完整覆蓋），供 AI 建立安全的互動層；不是 API、不下單 | 參考文件 |
-| [ai-trader](https://github.com/week833/ai-trader) | **AI-Trader 平台本體的副本**（與上游相同、未修改；6 個 Skill 的來源已改連上游） | Fork（上游 [HKUDS/AI-Trader](https://github.com/HKUDS/AI-Trader)） |
 
 `stock` 選單提供安裝環境、下載 core 來源、修復路徑、重設 ENV/PATH、開啟已啟用 venv 的終端機與基本檢查。沿用有效的本專案環境；Git 只在 clone 缺少的專案或新外部來源時需要，既有來源會略過。
 

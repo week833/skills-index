@@ -8,7 +8,7 @@
 
 | 分類 | 收錄內容 | 說明頁 |
 |---|---|---|
-| 📈 股票與交易 | 7 個 Skill＋3 個工具／參考專案 | [stock/README.md](stock/README.md) |
+| 📈 股票與交易 | 7 個 Skill（其中 6 個來自外部上游 HKUDS/AI-Trader）＋2 個工具／參考專案 | [stock/README.md](stock/README.md) |
 | 📊 簡報製作 | 1 個 Skill | [presentation/README.md](presentation/README.md) |
 | 🖥️ Windows 桌面自動化 | 1 個工具專案（非 Skill） | [desktop-automation/README.md](desktop-automation/README.md) |
 | 🗂️ 索引 | 本儲存庫（原 `week833/week833`） | 本頁 |
@@ -38,7 +38,6 @@
 |---|---|---|---|
 | [stock](https://github.com/week833/stock) | **股票研究環境**的安裝、設定、修復與外部來源索引（另附 AI 語意動作入口） | 工具／安裝包 | 📈 股票與交易 |
 | [finmind-twstock-research-skill](https://github.com/week833/finmind-twstock-research-skill) | **FinMind 台股研究 Skill**（非 FinMind 官方） | Skill | 📈 股票與交易 |
-| [ai-trader](https://github.com/week833/ai-trader) | **AI 代理交易平台**（內含 6 個交易 Skill；美股／加密貨幣／Polymarket 模擬交易；與上游相同、未修改） | Fork（上游 [HKUDS/AI-Trader](https://github.com/HKUDS/AI-Trader)） | 📈 股票與交易 |
 | [stock-mitake-ui-reference](https://github.com/week833/stock-mitake-ui-reference) | **三竹股市介面**導航與操作安全參考（公開包 `2.1.0`，82 項） | 參考文件 | 📈 股票與交易 |
 | [ppt-master](https://github.com/week833/ppt-master) | **AI 簡報生成** Skill 工具包（2026-10-21 已同步到上游 `6.7.2`，沒有自有修改） | Fork（上游 [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master)） | 📊 簡報製作 |
 | [windows-local-action-recorder](https://github.com/week833/windows-local-action-recorder) | **Windows 本機操作錄製與受控重播** | 工具（非 Skill） | 🖥️ Windows 桌面自動化 |
@@ -46,4 +45,6 @@
 
 本機配置同步日期：2026-10-07（本次核對的配置與索引）。
 
-查核日期：2026-10-21（核對上述 7 個儲存庫，以及上游 HKUDS/AI-Trader、hugohe3/ppt-master 在 GitHub 上的公開內容）。
+外部上游（不屬於本帳號）：[HKUDS/AI-Trader](https://github.com/HKUDS/AI-Trader)，是 6 個 AI-Trader Skill 的來源。本帳號原有的 `ai-trader` Fork 與上游完全相同、沒有自有修改，已於 2026-10-22 刪除。
+
+查核日期：2026-10-22（核對上述 6 個儲存庫，以及上游 HKUDS/AI-Trader、hugohe3/ppt-master 在 GitHub 上的公開內容）。
