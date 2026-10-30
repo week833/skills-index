@@ -45,6 +45,6 @@
 
 外部上游（不屬於本帳號，不列入上表）：[HKUDS/AI-Trader](https://github.com/HKUDS/AI-Trader) 是 6 個 AI-Trader Skill 的來源；[hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) 是 ppt-master Fork 的上游。本帳號原有的 ai-trader Fork 已刪除，2026-10-30 查核時已不存在。
 
-核對版本：stock `2eb3278`、finmind-twstock-research-skill `5a8432c`、stock-mitake-ui-reference `4caf213`、ppt-master `5e8856b`（`main` 與 `v6`）、windows-local-action-recorder `f4694d2`；上游 HKUDS/AI-Trader `d03ff6c`、hugohe3/ppt-master `5e8856b`。
+核對版本：stock `4582dda`、finmind-twstock-research-skill `5a8432c`、stock-mitake-ui-reference `4caf213`、ppt-master `5e8856b`（`main` 與 `v6`）、windows-local-action-recorder `f4694d2`；上游 HKUDS/AI-Trader `d03ff6c`、hugohe3/ppt-master `5e8856b`。
 
 查核日期：2026-10-30（核對上述 6 個儲存庫，以及上游 HKUDS/AI-Trader、hugohe3/ppt-master 在 GitHub 上的公開內容）。
