@@ -1,0 +1,12 @@
+# Python caches (skills/ 內含 Python 腳本與測試)
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Credentials
+.env
+.ENV
+.env.*
+!.env.example
