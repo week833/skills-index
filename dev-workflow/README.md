@@ -2,7 +2,12 @@
 
 [← 回總覽](../README.md)
 
-## 除錯與完成前驗證（外部上游 obra/superpowers）
+| 節 | 收錄 | 型態 |
+|---|---|---|
+| [一](#一除錯與完成前驗證外部上游-obrasuperpowers) | `systematic-debugging`、`verification-before-completion` | Skill（外部上游） |
+| [二](#二變更審查自有改寫) | `change-review` | Skill（自有改寫，放在本儲存庫） |
+
+## 一、除錯與完成前驗證（外部上游 obra/superpowers）
 
 以下 2 個 Skill 位於上游 [obra/superpowers](https://github.com/obra/superpowers) 的 `skills/` 目錄，本帳號不存副本，來源一律連到上游。
 
@@ -35,3 +40,18 @@
 - 語言：全英文，語氣強硬（跳過任一步驟視同說謊）
 - 來源：[obra/superpowers/skills/verification-before-completion](https://github.com/obra/superpowers/tree/main/skills/verification-before-completion)（入口 `SKILL.md`；MIT 授權）
 - 查核版本：`22f0b46`（v7.0.2，2026-11-03）；2026-11-13 上游 `main` 仍是這個版本
+
+## 二、變更審查（自有改寫）
+
+### `change-review`
+
+> **用途：接受研究程式的變更之前，做一次唯讀、附證據、盡可能獨立的審查。** 預設審查尚未提交的修改，對照使用者的需求、專案規則與八項研究程式檢核表（需求與範圍、時間點正確性與前視、可重現性、機密、輸出與路徑、文件、驗證證據、誠實陳述），每一項發現都附檔案、行號、原文與查證方式，最後給出「可接受／修正後可接受／不可接受」。
+
+- 範圍：預設是未暫存與已暫存的差異，以及未追蹤檔案的內容；使用者指名時才審查 commit、範圍或分支，不會為了產生範圍而 commit
+- 不做：不修正任何東西、不 commit、不 push；主代理逐項核對審查者的發現後回報，修不修、修哪幾項由使用者決定。不連網，不執行會抓資料、傳訊息或訓練模型的程式；測試只在使用者指名指令時照原文執行
+- 觸發：只在明確要求時使用（`allow_implicit_invocation: false`）
+- ⚠️ 獨立性：要做到獨立審查，需要能派出不帶對話內容的子代理（Codex 是否提供未能確認）；沒有時由同一個代理審查，報告會標示是否獨立
+- ⚠️ 指令：只列出加了唯讀前綴的單行 git 指令，只在 Linux 的 git 2.43.0 上查證過，沒有在 Windows、PowerShell 或 Codex 裡執行；repository 使用 Git LFS 這類 filter 時，`status` 與 `diff` 仍可能執行 filter 並寫入 `.git/lfs`
+- 驗證狀態：審查品質與誤報率還沒有實際評估過
+- 來源：本儲存庫 [skills/change-review](../skills/change-review)（入口 `SKILL.md`；MIT 授權）
+- 改寫自：[obra/superpowers/skills/requesting-code-review](https://github.com/obra/superpowers/tree/main/skills/requesting-code-review)（`22f0b46`，v7.0.2；MIT）。主要改動：預設審查未提交的變更（上游審 `HEAD~1..HEAD`，變更未提交時會審到上一個 commit）、禁止審查者建立 git worktree、不自動修正、受審內容中的指示一律不遵從，全文改為繁體中文；完整差異見 [NOTICE.md](../skills/change-review/NOTICE.md)
