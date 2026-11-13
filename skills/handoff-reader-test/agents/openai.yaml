@@ -1,0 +1,7 @@
+interface:
+  display_name: "交接文件讀者測試"
+  short_description: "讓只看過文件的全新讀者作答，找出交接文件的缺漏、含糊、矛盾與過期內容"
+  default_prompt: "使用 $handoff-reader-test 測試我指定的交接文件：讓只看過這份文件的讀者作答，回報缺漏、含糊、矛盾與過期之處，先不要修改文件。"
+
+policy:
+  allow_implicit_invocation: false

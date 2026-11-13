@@ -1,0 +1,7 @@
+interface:
+  display_name: "SHAP 模型稽核"
+  short_description: "以 SHAP 稽核已訓練模型用了哪些特徵與特徵組，遵守時點規則並做可加性與交叉檢查"
+  default_prompt: "使用 $shap-model-audit 稽核這個已訓練模型在樣本外期間用了哪些特徵組：寫明解釋的輸出與單位、背景期間，附可加性檢查與 permutation importance 交叉檢查，只描述模型行為。"
+
+policy:
+  allow_implicit_invocation: true

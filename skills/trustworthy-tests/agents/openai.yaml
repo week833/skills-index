@@ -1,0 +1,7 @@
+interface:
+  display_name: "可信的研究程式測試"
+  short_description: "先看到測試失敗再讓它通過，預期值獨立推導，並明確測試前視洩漏"
+  default_prompt: "使用 $trustworthy-tests 為這段研究程式撰寫可信的測試，附上實際指令與失敗、通過的輸出；測試若在既有程式上失敗，先回報，由我決定要不要修。"
+
+policy:
+  allow_implicit_invocation: true

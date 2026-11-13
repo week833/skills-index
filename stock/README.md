@@ -67,7 +67,7 @@
 | 維護 | **受控清理**：先產生預覽清單，明確確認後才套用 | [`programs\maintenance`](https://github.com/week833/stock/tree/main/programs/maintenance) 的 `PLAN_CLEANUP.ps1`、`APPLY_CLEANUP.ps1` |
 
 - ⚠️ 不能單獨執行：程式讀取 `D:\TWStockData` 的中央已發布行情，報告也寫回那裡；全市場正式分析在外部的 `D:\MIX All`，中央資料更新在 `D:\TWStockData\services\market_update`。這些都不在 repo 內
-- ⚠️ 不下單：repo 內沒有券商下單程式；Top10 報告寫明命中率只代表收盤方向，以隔日開盤買進 Top10 的平均報酬約為零或為負；單股報告寫明模型效果及交易效益未驗證、不據此宣稱已驗證獲利能力
+- ⚠️ 不下單：repo 內沒有券商下單程式。Top10 報告的「使用限制」一律寫明僅供研究，正式資格、排序效果與交易效益尚未確認；採用開盤前版時另寫明命中率指收盤方向、不代表交易獲利，以及隔日開盤買進 Top10 的保留期平均報酬（依配方為負、約為零或未知）。單股報告走 C0 路徑（沒有單股啟用指標時）時，若 H1 以開盤前版為主要顯示，由「開盤前版必要揭露」寫明命中率不代表交易獲利，其他情況則寫明模型效果及交易效益未驗證
 - ⚠️ 憑證：Telegram 的 Token 與 Chat ID 只放在被 Git 忽略的 `.ENV`；個股 Bot 只回應 `.ENV` 設定的私人 Chat ID
 - 需求：Windows；根目錄 `D:\stock\.venv` 與 `TWNextDayTop10` 各自的 `.venv`；次日 Top10 產生報告與環境檢查 `CHECK_ENV.cmd` 都需要 Codex runtime 快取中的 Node（`~/.cache/codex-runtimes/…/node.exe`）與專案本地的 `TWNextDayTop10\node_modules\@oai\artifact-tool`（兩者都不在 repo 內），缺少時不會產生任何報告檔（JSON／CSV／Excel／HTML）
 - AI 代理相關檔案（都不是 Skill，repo 內沒有 `SKILL.md`）：`AGENTS.md` 是給 Codex 等代理在 `D:\stock` 工作的規則（語言、先分析後修改、開工讀取順序、固定入口、不可破壞的契約）；`docs/CODEX_QUICK_REQUESTS.md` 是一行需求範本；`config/mitake_*.json` 是供代理查詢的三竹介面參考目錄（reference-only），與 `stock-mitake-ui-reference` 同屬三竹介面觀察資料
