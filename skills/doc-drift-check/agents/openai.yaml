@@ -1,0 +1,7 @@
+interface:
+  display_name: "文件漂移檢查"
+  short_description: "唯讀找出所描述的程式在核對後又變動、需要重新查核的文件"
+  default_prompt: "使用 $doc-drift-check 唯讀檢查這個儲存庫文件裡的指紋，列出需要重新查核的文件與變動的檔案，並附上實際指令與輸出。"
+
+policy:
+  allow_implicit_invocation: true

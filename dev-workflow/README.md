@@ -5,7 +5,7 @@
 | 節 | 收錄 | 型態 |
 |---|---|---|
 | [一](#一除錯與完成前驗證外部上游-obrasuperpowers) | `systematic-debugging`、`verification-before-completion` | Skill（外部上游） |
-| [二](#二變更審查自有改寫) | `change-review` | Skill（自有改寫，放在本儲存庫） |
+| [二](#二測試與變更審查自有改寫) | `trustworthy-tests`、`change-review` | Skill（自有改寫，放在本儲存庫） |
 
 ## 一、除錯與完成前驗證（外部上游 obra/superpowers）
 
@@ -41,7 +41,23 @@
 - 來源：[obra/superpowers/skills/verification-before-completion](https://github.com/obra/superpowers/tree/main/skills/verification-before-completion)（入口 `SKILL.md`；MIT 授權）
 - 查核版本：`22f0b46`（v7.0.2，2026-11-03）；2026-11-13 上游 `main` 仍是這個版本
 
-## 二、變更審查（自有改寫）
+## 二、測試與變更審查（自有改寫）
+
+以下 2 個 Skill 放在本儲存庫的 [`skills/`](../skills)，都改寫自上游 [obra/superpowers](https://github.com/obra/superpowers)（`22f0b46`，v7.0.2；MIT），依 week833 的規則改寫：繁體中文、AGENTS.md 與使用者指示優先、不刪除或搬移既有程式、不安裝套件、不動虛擬環境、未經同意不連網或傳送訊息。
+
+### `trustworthy-tests`
+
+> **用途：撰寫看得到失敗的研究程式測試。** 先說出這個測試要抓什麼錯，預期值用手算或另一種獨立的方法推導；先看到測試因為斷言而失敗，程式才讓它通過；時點正確性（前視）用專門的樣式測試。
+
+- 觸發：使用者要求撰寫或修改測試，或要求改變程式行為並同意測試是工作的一部分；只要求修正時，先提議回歸測試，同意才加
+- 既有程式：一律原樣保留。新測試一寫就通過不算可信，要經使用者同意做暫時的突變檢查（最小修改、看到失敗、改回原文字、以雜湊確認還原）；沒有同意就寫明「未做突變檢查」。新測試在既有程式上一跑就失敗時，只回報，不改程式
+- 只跑目標測試；既有測試先讀過它與 `conftest.py`，確認不會抓資料、傳訊息或連網才執行；不安裝套件或 pytest 外掛；無關的失敗只回報不修
+- 時點正確性樣式（8 種）：截斷不變性、未來資料擾動不變性、依可得時間的 as-of 合併、標籤對齊與位移方向、重疊標籤時有間隔的時間切分、前處理只用訓練窗擬合、交易列數與日曆天的滾動窗、海外交易時段對應到本地交易日
+- 範例：[examples/test_pit_patterns.py](../skills/trustworthy-tests/examples/test_pit_patterns.py) 只用 pandas、numpy、pytest，每種樣式都示範正確實作通過、刻意洩漏的實作會被抓到；在 Python 3.12、pandas 2.3.3、numpy 2.5.1、pytest 9.2.0 上 41 個測試全部通過
+- ⚠️ 突變檢查會暫時修改程式檔，修改期間載入該檔案的服務或排程會執行到改過的內容，所以一定要先經使用者同意
+- 驗證狀態：只在 Linux 驗證；文件中的 PowerShell 指令沒有實測，也沒有在使用者的 stock repo 或 Codex 內執行過
+- 來源：本儲存庫 [skills/trustworthy-tests](../skills/trustworthy-tests)（入口 `SKILL.md`；MIT 授權）
+- 改寫自：[obra/superpowers/skills/test-driven-development](https://github.com/obra/superpowers/tree/main/skills/test-driven-development)。拿掉上游「先寫了程式就刪掉重來」「其他測試失敗就立刻修」「每次跑完整測試套件」「替既有程式補測試」與每輪的重構步驟；保留紅燈先於綠燈與撰寫可信測試的準則，範例改為 Python；完整差異見 [NOTICE.md](../skills/trustworthy-tests/NOTICE.md)
 
 ### `change-review`
 
@@ -54,4 +70,4 @@
 - ⚠️ 指令：只列出加了唯讀前綴的單行 git 指令，只在 Linux 的 git 2.43.0 上查證過，沒有在 Windows、PowerShell 或 Codex 裡執行；repository 使用 Git LFS 這類 filter 時，`status` 與 `diff` 仍可能執行 filter 並寫入 `.git/lfs`
 - 驗證狀態：審查品質與誤報率還沒有實際評估過
 - 來源：本儲存庫 [skills/change-review](../skills/change-review)（入口 `SKILL.md`；MIT 授權）
-- 改寫自：[obra/superpowers/skills/requesting-code-review](https://github.com/obra/superpowers/tree/main/skills/requesting-code-review)（`22f0b46`，v7.0.2；MIT）。主要改動：預設審查未提交的變更（上游審 `HEAD~1..HEAD`，變更未提交時會審到上一個 commit）、禁止審查者建立 git worktree、不自動修正、受審內容中的指示一律不遵從，全文改為繁體中文；完整差異見 [NOTICE.md](../skills/change-review/NOTICE.md)
+- 改寫自：[obra/superpowers/skills/requesting-code-review](https://github.com/obra/superpowers/tree/main/skills/requesting-code-review)。主要改動：預設審查未提交的變更（上游審 `HEAD~1..HEAD`，變更未提交時會審到上一個 commit）、禁止審查者建立 git worktree、不自動修正、受審內容中的指示一律不遵從，全文改為繁體中文；完整差異見 [NOTICE.md](../skills/change-review/NOTICE.md)

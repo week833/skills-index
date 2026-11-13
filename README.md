@@ -10,9 +10,9 @@
 |---|---|---|
 | 📈 股票與交易 | 7 個 Skill（1 個自有、6 個來自外部上游 HKUDS/AI-Trader）＋2 個非 Skill 儲存庫（台股分析程式、三竹介面參考） | [stock/README.md](stock/README.md) |
 | 🧪 量化研究與回測 | 1 個 Skill（外部上游 tradermonty/claude-trading-skills） | [quant-research/README.md](quant-research/README.md) |
-| 🛠️ 開發流程與程式品質 | 3 個 Skill（2 個外部上游 obra/superpowers、1 個自有改寫） | [dev-workflow/README.md](dev-workflow/README.md) |
+| 🛠️ 開發流程與程式品質 | 4 個 Skill（2 個外部上游 obra/superpowers、2 個自有改寫） | [dev-workflow/README.md](dev-workflow/README.md) |
 | 🧩 Skill 製作與評估 | 1 個 Skill（外部上游 kouko/monkey-skills） | [skill-authoring/README.md](skill-authoring/README.md) |
-| 📝 文件維護與查核 | 1 個 Skill（自有原創） | [docs-audit/README.md](docs-audit/README.md) |
+| 📝 文件維護與查核 | 2 個 Skill（1 個自有改寫、1 個自有原創） | [docs-audit/README.md](docs-audit/README.md) |
 | 📊 簡報製作 | 1 個 Skill | [presentation/README.md](presentation/README.md) |
 | 🖥️ Windows 桌面自動化 | 1 個工具專案（非 Skill） | [desktop-automation/README.md](desktop-automation/README.md) |
 | 🗂️ 索引 | 本儲存庫（原 `week833/week833`），也放自有改寫的 Skill | 本頁 |
@@ -33,6 +33,8 @@
 | `verification-before-completion` | **宣稱完成前先拿出證據**：重跑能證明的指令並讀完輸出，才能說完成、已修正或測試通過 | 只取單一資料夾、不要整包安裝；每次都要完整重跑驗證指令，須先指定可以安全重跑的指令；全英文 | 🛠️ 開發流程與程式品質 | [obra/superpowers/skills/verification-before-completion](https://github.com/obra/superpowers/tree/main/skills/verification-before-completion) |
 | `skill-consistency-check` | **找出 Skill 資料夾內互相矛盾的規則**：產出附檔名行號與原文引用的報告，只讀不改 | 需要子代理；上游只在 Claude Sonnet 驗證過；上游只記載一次裝入 6 個 Skill 的整包安裝 | 🧩 Skill 製作與評估 | [kouko/monkey-skills/skill-dev-toolkit/skills/skill-consistency-check](https://github.com/kouko/monkey-skills/tree/main/skill-dev-toolkit/skills/skill-consistency-check) |
 | `change-review` | **接受變更前做唯讀、附證據的審查**：預設看尚未提交的修改，對照需求、專案規則與八項研究程式檢核表，最後給出判定 | 自有改寫（上游 obra/superpowers 的 requesting-code-review）；只在明確要求時使用、不修正任何東西；獨立審查需要子代理；未在 Windows 或 Codex 實測 | 🛠️ 開發流程與程式品質 | [skills/change-review](skills/change-review) |
+| `trustworthy-tests` | **撰寫看得到失敗的研究程式測試**：先看到測試因斷言失敗再讓它通過，預期值獨立推導，並附 8 種前視（時點正確性）測試樣式與可執行範例 | 自有改寫（上游 obra/superpowers 的 test-driven-development）；不刪除既有程式；突變檢查要先經使用者同意；未在 Windows 或 Codex 實測 | 🛠️ 開發流程與程式品質 | [skills/trustworthy-tests](skills/trustworthy-tests) |
+| `doc-drift-check` | **唯讀找出需要重新查核的文件**：依文件內的指紋（核對 commit 與監看路徑）用 git 列出之後的程式變動 | 自有改寫（上游 wshobson/agents 的 grounded-vault）；只提示漂移、不判斷對錯；指紋只在查核完成且使用者要求時更新；未在 Windows 或 Codex 實測 | 📝 文件維護與查核 | [skills/doc-drift-check](skills/doc-drift-check) |
 | `handoff-reader-test` | **測試交接文件能否讓只看過它的讀者接手**：先寫好題目與參考答案，再讓不帶對話內容的讀者只憑文件作答，回報缺漏、含糊、矛盾與過期之處 | 自有原創；只在明確要求時使用、預設唯讀；需要子代理，否則改由使用者另開工作階段；讀者提示詞尚未實際跑過 | 📝 文件維護與查核 | [skills/handoff-reader-test](skills/handoff-reader-test) |
 | `ppt-master` | **生成可編輯 PPTX 簡報**，也能套範本、重建與美化既有簡報，或加旁白／動畫、做成旁白自動播放影片 | Fork，沒有自有修改；需先 `pip install` 相依套件；檔案約 1.3 萬個 | 📊 簡報製作 | [week833/ppt-master/skills/ppt-master](https://github.com/week833/ppt-master/tree/main/skills/ppt-master) |
 
@@ -44,7 +46,7 @@
 
 > `residual-edge-analyzer`、`systematic-debugging`、`verification-before-completion`、`skill-consistency-check` 都是外部上游的 Skill，本帳號不存副本；各自的限制與安裝注意寫在所屬的分類頁。
 
-> `change-review` 與 `handoff-reader-test` 是 week833 依自己的規則（繁體中文、只供研究不下單、token 只放 `.ENV`、先分析後修改、未驗證的事不寫成事實）寫成的 Skill，放在本儲存庫的 [`skills/`](skills)。兩者都只在 Linux 上做過檢查，沒有在 Windows 或 Codex 實際執行過；各自的 `NOTICE.md` 列出已驗證與未驗證的項目。
+> `trustworthy-tests`、`change-review`、`doc-drift-check`、`handoff-reader-test` 是 week833 依自己的規則（繁體中文、只供研究不下單、token 只放 `.ENV`、先分析後修改、未驗證的事不寫成事實）寫成的 Skill，放在本儲存庫的 [`skills/`](skills)。每一個都經過兩位獨立審查者（規則與安全、技術正確性）查核並修正；都只在 Linux 上驗證過，沒有在 Windows 或 Codex 實際執行過；各自的 `NOTICE.md` 列出已驗證與未驗證的項目。
 
 > `ppt-master` 的來源是本帳號的 Fork，沒有自有修改；2026-10-30 查核時，`main` 與 `v6` 兩個分支都和上游 [hugohe3/ppt-master](https://github.com/hugohe3/ppt-master) 的 `6.8.0`（`5e8856b`）相同，見 [presentation/README.md](presentation/README.md)。
 
