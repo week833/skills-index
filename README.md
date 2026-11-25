@@ -11,6 +11,7 @@
 | 📈 股票與交易 | 7 個 Skill（1 個自有、6 個來自外部上游 HKUDS/AI-Trader）＋2 個非 Skill 儲存庫（台股分析程式、三竹介面參考） | [stock/README.md](stock/README.md) |
 | 📊 簡報製作 | 1 個 Skill | [presentation/README.md](presentation/README.md) |
 | 🖥️ Windows 桌面自動化 | 1 個工具專案（非 Skill） | [desktop-automation/README.md](desktop-automation/README.md) |
+| 🎮 遊戲美術與生圖 | 9 個外部 Skill，依 5 種美術用途分類 | [game-art/README.md](game-art/README.md) |
 | 🗂️ 索引 | 本儲存庫（原 `week833/week833`） | 本頁 |
 
 ## 全部 Skill 速查
@@ -25,6 +26,15 @@
 | `market-intel` | **唯讀市場情報**：財經事件看板、分組新聞、總經訊號與個股分析快照 | 不需 token；內容是 ai4trade.ai 產生的快照 | 📈 股票與交易 | [HKUDS/AI-Trader/skills/market-intel](https://github.com/HKUDS/AI-Trader/tree/main/skills/market-intel) |
 | `polymarket-public-data` | **讀取 Polymarket 公開市場資料**與訂單簿價格 | 讀取不需 token、直接查 Polymarket；發布模擬交易時才經 AI-Trader（需 token） | 📈 股票與交易 | [HKUDS/AI-Trader/skills/polymarket](https://github.com/HKUDS/AI-Trader/tree/main/skills/polymarket) |
 | `ppt-master` | **生成可編輯 PPTX 簡報**，也能套範本、重建與美化既有簡報，或加旁白／動畫、做成旁白自動播放影片 | Fork，沒有自有修改；需先 `pip install` 相依套件；檔案約 1.3 萬個 | 📊 簡報製作 | [week833/ppt-master/skills/ppt-master](https://github.com/week833/ppt-master/tree/main/skills/ppt-master) |
+| `assetelier` | 沿用角色定稿圖製作表情、姿勢與劇情插畫 | 變體共用定稿參考圖 | 🎮 遊戲美術與生圖 | [Haruhiyuki/assetelier](https://github.com/Haruhiyuki/assetelier/blob/main/assetelier/skills/assetelier/SKILL.md) |
+| `sprite-pipeline` | 從基準影格製作走路、待機或受擊動畫 | 搭配生圖工具與 Python | 🎮 遊戲美術與生圖 | [openai/plugins](https://github.com/openai/plugins/blob/main/plugins/game-studio/skills/sprite-pipeline/SKILL.md) |
+| `game-character-sprites` | 製作四方向或八方向角色動畫圖集 | 逐一製作各動作與方向 | 🎮 遊戲美術與生圖 | [tachikomared/character-animation-creator-skill](https://github.com/tachikomared/character-animation-creator-skill/blob/main/SKILL.md) |
+| `spriteforge` | 用同一個 Blender 模型產出多方向角色與物件 | 需要 Blender 與 uv | 🎮 遊戲美術與生圖 | [luan/spriteforge](https://github.com/luan/spriteforge/blob/main/skills/spriteforge/SKILL.md) |
+| `generating-dot-assets` | 把道具原圖處理成定尺寸、共用色盤的透明 PNG | 需要生圖工具、Node.js 與 ImageMagick | 🎮 遊戲美術與生圖 | [abagames/agentic-gamedev-skills](https://github.com/abagames/agentic-gamedev-skills/blob/main/.agents/skills/generating-dot-assets/SKILL.md) |
+| `tileset` | 製作可銜接的地形圖塊與自動拼接素材 | 先指定引擎與圖塊格線 | 🎮 遊戲美術與生圖 | [melodic-software/claude-code-plugins](https://github.com/melodic-software/claude-code-plugins/blob/main/plugins/pixel-art/skills/tileset/SKILL.md) |
+| `layer-game-ui` | 製作成套技能圖示、按鈕與九宮格對話框 | 完整流程需使用 Layer | 🎮 遊戲美術與生圖 | [layerai/skills](https://github.com/layerai/skills/blob/main/plugins/layer/skills/layer-game-ui/SKILL.md) |
+| `layer-environments` | 將場景拆成可捲動的遠景、中景與前景 | 完整流程需使用 Layer | 🎮 遊戲美術與生圖 | [layerai/skills](https://github.com/layerai/skills/blob/main/plugins/layer/skills/layer-environments/SKILL.md) |
+| `layer-vfx` | 製作光效、煙霧與技能特效序列圖 | 完整流程需使用 Layer | 🎮 遊戲美術與生圖 | [layerai/skills](https://github.com/layerai/skills/blob/main/plugins/layer/skills/layer-vfx/SKILL.md) |
 
 > ⚠️ **AI-Trader 的 6 個 Skill** 來自第三方專案 [HKUDS/AI-Trader](https://github.com/HKUDS/AI-Trader)，配合第三方平台 [ai4trade.ai](https://ai4trade.ai) 使用：**只支援美股、加密貨幣與 Polymarket，不支援台股**；交易使用平台的**模擬資金**（預設 10 萬美元）。需要註冊取得 token 的是 `ai-trader`、`ai-trader-copytrade`、`ai-trader-tradesync`、`ai-trader-heartbeat`；`market-intel` 只唯讀讀取平台快照，不需 token；`polymarket-public-data` 讀取時直接查 Polymarket 公開 API，只有要把模擬交易發布到 AI-Trader 時才需要 token。本帳號原有的 ai-trader Fork 已刪除，6 個 Skill 的來源一律連到上游。
 
